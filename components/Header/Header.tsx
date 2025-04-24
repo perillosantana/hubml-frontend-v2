@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 export const Header = () => {
   const { t } = useTranslation();
 
+  console.log(t("button.getting-started"));
+
   return (
     <div className="bg-white bg-opacity-70 sticky top-0 z-10">
       <div className="container flex items-center justify-between py-5">
