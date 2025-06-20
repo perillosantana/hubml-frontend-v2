@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme {
+  --color-ml-50: #eff9ff;
+  --color-ml-100: #dff2ff;
+  --color-ml-200: #b7e8ff;
+  --color-ml-300: #77d6ff;
+  --color-ml-400: #2fc3ff;
+  --color-ml-500: #039fe2;
+  --color-ml-600: #0089d1;
+  --color-ml-700: #006da9;
+  --color-ml-800: #015c8b;
+  --color-ml-900: #074c73;
+  --color-ml-950: #05314c;
+}
