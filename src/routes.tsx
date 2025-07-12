@@ -5,6 +5,8 @@ import LoginLayout from './layout/LoginLayout'
 import PublicLayout from './layout/PublicLayout'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Dashboard from './pages/admin/Dashboard'
+import Products from './pages/admin/Products'
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +27,8 @@ export const router = createBrowserRouter([
       </RequireAuth>
     ),
     children: [
-      // { path: 'settings', element: <Settings /> }
+      { path: '/admin', element: <Dashboard /> },
+      { path: '/admin/products', element: <Products /> },
     ],
   },
 ])

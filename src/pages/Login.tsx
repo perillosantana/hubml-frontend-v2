@@ -10,7 +10,10 @@ export default function Login() {
       </Link>
 
       <Button variant="outline">
-        <Link to="" className="flex items-center gap-2">
+        <Link
+          to={`${import.meta.env.VITE_BACKEND_URL}/auth/google`}
+          className="flex items-center gap-2"
+        >
           <AtSign size={16} aria-hidden="true" />
           Login com Google
         </Link>

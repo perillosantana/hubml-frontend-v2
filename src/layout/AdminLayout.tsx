@@ -1,18 +1,25 @@
-import { Home } from 'lucide-react'
 import { Outlet } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { Header } from '@/components/Admin/Header'
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 
+const pages: Record<string, string> = {
+  admin: 'Dashboard',
+  adminproducts: 'Produtos',
+}
+
 export default function AdminLayout() {
+  const location = useLocation()
+  const path = location.pathname.replace(/\//g, '')
+  const title = pages[path] ?? 'Página'
+
   return (
     <div className="bg-admin flex min-h-svh w-full">
       <SidebarProvider>
@@ -27,17 +34,8 @@ export default function AdminLayout() {
 
               <Breadcrumb>
                 <BreadcrumbList>
-                  <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="/admin">
-                      <Home size={22} />
-                      <span className="sr-only">Dashboard</span>
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-
-                  <BreadcrumbSeparator className="hidden md:block" />
-
                   <BreadcrumbItem>
-                    <BreadcrumbPage>Contacts</BreadcrumbPage>
+                    <BreadcrumbPage>{title}</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
